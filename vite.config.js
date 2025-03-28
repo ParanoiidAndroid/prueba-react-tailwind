@@ -8,4 +8,5 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     react()],
+    base: "https://paranoiidandroid.github.io/prueba-react-tailwind/",
 })
