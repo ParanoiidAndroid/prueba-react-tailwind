@@ -1,7 +1,7 @@
 export default function Login() {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-gray-800 via-gray-700 to-gray-400">
-      <div className="bg-gray-800 text-white rounded-2xl shadow-lg p-8 max-w-sm w-full">
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-gray-300 via-gray-200 to-yellow-100">
+      <div className="bg-white text-gray-900 rounded-2xl shadow-lg p-8 max-w-sm w-full">
         <h2 className="text-2xl font-bold text-center mb-6">Iniciar Sesión</h2>
         <form className="space-y-6">
           <div>
@@ -12,7 +12,7 @@ export default function Login() {
               type="email"
               id="email"
               name="email"
-              className="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+              className="w-full p-3 rounded-lg bg-gray-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               placeholder="Ingresá tu email"
             />
           </div>
@@ -28,14 +28,14 @@ export default function Login() {
               type="password"
               id="password"
               name="password"
-              className="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+              className="w-full p-3 rounded-lg bg-gray-100 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400"
               placeholder="Ingresá tu contraseña"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-yellow-300 text-gray-800 font-bold p-3 rounded-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+            className="w-full bg-yellow-400 text-gray-900 font-bold p-3 rounded-lg hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-400"
           >
             Entrar
           </button>
@@ -45,7 +45,7 @@ export default function Login() {
           ¿No tenés una cuenta?{" "}
           <a
             href="#"
-            className="text-yellow-300 hover:text-yellow-400 underline transition-colors"
+            className="text-yellow-500 hover:text-yellow-600 underline transition-colors"
           >
             Registrarte
           </a>

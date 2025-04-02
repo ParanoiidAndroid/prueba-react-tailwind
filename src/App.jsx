@@ -1,26 +1,25 @@
-import { BrowserRouter, Routes, Route }  from "react-router-dom"
-import Home from "./pages/Home"
-import Contact from "./pages/Contact"
-import About from "./pages/About"
-import Header from "./components/Header"
-import Login from "./pages/Login"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout"; 
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+import Login from "./pages/Login";
+import Faq from "./pages/Faq";
 
 function App() {
-
-
   return (
-    <>
-      <BrowserRouter>
-      <Header />
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/contact" element={<Contact/>}/>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/login" element={<Login/>}/>
-        </Routes>
-      </BrowserRouter>
-    </>
-  )
+    <BrowserRouter basename="/prueba-react-tailwind/"> 
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="faq" element={<Faq />} />
+          <Route path="about" element={<About />} />
+          <Route path="login" element={<Login />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

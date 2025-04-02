@@ -9,7 +9,8 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
-  base: "https://paranoiidandroid.github.io/prueba-react-tailwind/",
+  base: "/prueba-react-tailwind/",
+
   resolve: {
     alias: {
       '@': path.resolve('src'), // Cambiado __dirname a la ruta relativa
