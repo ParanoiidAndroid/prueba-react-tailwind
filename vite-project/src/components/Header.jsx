@@ -1,9 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 export default function Header() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const { userInfo } = useSelector((state) => state.user);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -66,16 +69,46 @@ export default function Header() {
             menuOpen ? "block" : "hidden"
           } md:flex md:flex-row space-y-4 md:space-y-0 md:space-x-6 mt-4 md:mt-0 md:px-4`}
         >
-          {["/", "/contact", "/faq", "/about", "/login"].map((route, index) => (
-            <li key={index}>
-              <Link to={route} className={linkClass(route)}>
-                {route === "/"
-                  ? "Home"
-                  : route.replace("/", "").charAt(0).toUpperCase() +
-                    route.slice(2)}
+          <li>
+            <Link to="/" className={linkClass("/")}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className={linkClass("/contact")}>
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link to="/faq" className={linkClass("/faq")}>
+              FAQ
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className={linkClass("/about")}>
+              About
+            </Link>
+          </li>
+          {userInfo ? (
+            <>
+              <li>
+                <Link to="/profile" className={linkClass("/profile")}>
+                  {userInfo.name}
+                </Link>
+              </li>
+              <li>
+                <Link to="/transactions" className={linkClass("/transactions")}>
+                  Transacciones
+                </Link>
+              </li>
+            </>
+          ) : (
+            <li>
+              <Link to="/login" className={linkClass("/login")}>
+                Login
               </Link>
             </li>
-          ))}
+          )}
         </ul>
       </nav>
     </header>
